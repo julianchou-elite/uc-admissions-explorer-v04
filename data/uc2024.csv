@@ -1,0 +1,107 @@
+year,campus,campus_display,discipline,college_school_labels,applicants,admits,enrollees,admit_gpa,enrollee_gpa,admit_rate,yield_rate,selectivity_label
+2024,UCB,UC Berkeley,Architecture,College Of Environmental Design,2939,211,102,4.14 - 4.28,4.11 - 4.27,7.0,48.0,Most Selective
+2024,UCB,UC Berkeley,Arts & Humanities,College Of Letters & Science,8917,2052,854,4.07 - 4.28,4.03 - 4.25,23.0,42.0,Highly Selective
+2024,UCB,UC Berkeley,Business,School Of Business Administration,8069,327,191,4.20 - 4.30,4.16 - 4.30,4.0,58.0,Most Selective
+2024,UCB,UC Berkeley,Computer Science,"College Of Computing, Data Sci And Soc",13437,515,343,4.20 - 4.30,4.17 - 4.30,4.0,67.0,Most Selective
+2024,UCB,UC Berkeley,Engineering,College Of Chemistry; College Of Engineering; College Of Letters & Science,21831,1698,906,4.21 - 4.30,4.19 - 4.30,8.0,53.0,Most Selective
+2024,UCB,UC Berkeley,Life Sciences,College Of Letters & Science; College Of Natural Resources,16970,2998,1264,4.16 - 4.29,4.10 - 4.28,18.0,42.0,Highly Selective
+2024,UCB,UC Berkeley,Other/Interdisciplinary,College Of Letters & Science; College Of Natural Resources,6847,807,331,4.15 - 4.29,4.11 - 4.27,12.0,41.0,Highly Selective
+2024,UCB,UC Berkeley,Physical Sciences/Math,"College Of Chemistry; College Of Computing, Data Sci And Soc; College Of Engineering; College Of Letters & Science",11487,1821,812,4.19 - 4.30,4.14 - 4.29,16.0,45.0,Highly Selective
+2024,UCB,UC Berkeley,Public Admin,College Of Letters & Science,260,33,13,4.11 - 4.26,4.06 - 4.25,13.0,39.0,Highly Selective
+2024,UCB,UC Berkeley,Public Health,College Of Letters & Science,2713,62,16,4.14 - 4.30,4.11 - 4.30,2.0,26.0,Most Selective
+2024,UCB,UC Berkeley,Social Sciences,College Of Environmental Design; College Of Letters & Science,18816,1683,731,4.16 - 4.29,4.11 - 4.28,9.0,43.0,Most Selective
+2024,UCB,UC Berkeley,Undeclared,College Of Engineering; College Of Letters & Science; College Of Natural Resources,11956,1432,709,4.11 - 4.29,4.04 - 4.26,12.0,50.0,Highly Selective
+2024,UCD,UC Davis,Architecture,College Of Agric & Environ Sciences,601,166,19,4.04 - 4.25,4.06 - 4.25,28.0,11.0,Selective
+2024,UCD,UC Davis,Arts & Humanities,College Of Letters & Science,6766,3243,490,3.92 - 4.23,3.76 - 4.08,48.0,15.0,Selective
+2024,UCD,UC Davis,Business,College Of Agric & Environ Sciences,2404,800,122,4.03 - 4.27,3.95 - 4.22,33.0,15.0,Selective
+2024,UCD,UC Davis,Computer Science,College Of Engineering,6950,1175,97,4.20 - 4.30,4.14 - 4.29,17.0,8.0,Highly Selective
+2024,UCD,UC Davis,Education,College Of Agric & Environ Sciences,395,133,24,4.00 - 4.22,3.99 - 4.26,34.0,18.0,Selective
+2024,UCD,UC Davis,Engineering,College Of Agric & Environ Sciences; College Of Engineering,16933,6354,1020,4.09 - 4.29,4.00 - 4.26,38.0,16.0,Selective
+2024,UCD,UC Davis,Life Sciences,College Of Agric & Environ Sciences; College Of Biological Sciences,23020,11643,2381,4.03 - 4.26,3.96 - 4.22,51.0,20.0,Moderately Accessible
+2024,UCD,UC Davis,Other Health Science,College Of Letters & Science,555,321,60,4.03 - 4.24,3.99 - 4.18,58.0,19.0,Moderately Accessible
+2024,UCD,UC Davis,Other/Interdisciplinary,College Of Agric & Environ Sciences; College Of Biological Sciences; College Of Letters & Science,6625,2940,453,4.00 - 4.25,3.86 - 4.20,44.0,15.0,Selective
+2024,UCD,UC Davis,Physical Sciences/Math,College Of Agric & Environ Sciences; College Of Letters & Science,5909,3476,534,4.03 - 4.27,3.91 - 4.20,59.0,15.0,Moderately Accessible
+2024,UCD,UC Davis,Public Admin,College Of Agric & Environ Sciences,130,87,27,3.81 - 4.16,3.72 - 4.15,67.0,31.0,Moderately Accessible
+2024,UCD,UC Davis,Social Sciences,College Of Agric & Environ Sciences; College Of Letters & Science,20986,7592,904,4.00 - 4.25,3.90 - 4.19,36.0,12.0,Selective
+2024,UCD,UC Davis,Undeclared,College Of Agric & Environ Sciences; College Of Biological Sciences; College Of Letters & Science,7590,3423,636,3.94 - 4.22,3.80 - 4.11,45.0,19.0,Selective
+2024,UCI,UC Irvine,Arts & Humanities,School Of Humanities; School Of The Arts,7326,2608,436,3.95 - 4.23,3.82 - 4.15,36.0,17.0,Selective
+2024,UCI,UC Irvine,Business,Information & Computer Sci; School Of Administration; School Of Social Sciences,16133,2035,274,4.09 - 4.28,4.00 - 4.26,13.0,13.0,Highly Selective
+2024,UCI,UC Irvine,Computer Science,Information & Computer Sci,9187,1874,355,4.18 - 4.29,4.15 - 4.29,20.0,19.0,Highly Selective
+2024,UCI,UC Irvine,Education,School Of Biological Sciences; School Of Education,1918,682,144,3.92 - 4.21,3.81 - 4.17,36.0,21.0,Selective
+2024,UCI,UC Irvine,Engineering,Information & Computer Sci; Interdisciplinary Studies; School Of Engineering,19342,5446,1106,4.14 - 4.29,4.10 - 4.28,28.0,20.0,Selective
+2024,UCI,UC Irvine,Life Sciences,School Of Biological Sciences; School Of Physical Sciences,16979,5706,911,4.10 - 4.28,4.05 - 4.27,34.0,16.0,Selective
+2024,UCI,UC Irvine,Nursing,School Of Nursing,5885,65,33,4.25 - 4.31,4.25 - 4.30,1.0,51.0,Most Selective
+2024,UCI,UC Irvine,Other/Interdisciplinary,Information & Computer Sci; School Of Humanities; School Of Social Sciences; Social Ecology,4838,1500,188,4.05 - 4.27,3.90 - 4.21,31.0,13.0,Selective
+2024,UCI,UC Irvine,Pharmacy,School Of Pharmacy & Pharm Sciences,1487,598,175,4.04 - 4.26,4.03 - 4.25,40.0,29.0,Selective
+2024,UCI,UC Irvine,Physical Sciences/Math,School Of Physical Sciences,6300,2785,403,4.06 - 4.28,4.00 - 4.22,44.0,14.0,Selective
+2024,UCI,UC Irvine,Public Health,School Of Population And Public Health,3119,1319,299,4.06 - 4.26,4.00 - 4.22,42.0,23.0,Selective
+2024,UCI,UC Irvine,Social Sciences,School Of Humanities; School Of Social Sciences; Social Ecology,20159,5859,928,4.00 - 4.25,3.95 - 4.20,29.0,16.0,Selective
+2024,UCI,UC Irvine,Undeclared,Information & Computer Sci; School Of Engineering; School Of Humanities; School Of Physical Sciences; School Of The Arts; Social Ecology; Unaffiliated,10026,4568,1484,3.95 - 4.22,3.85 - 4.14,46.0,32.0,Selective
+2024,UCLA,UCLA,Arts & Humanities,"College Of Letters & Science; School Of Music; School Of The Arts & Architecture; School Of Theater, Film And Television",15133,1244,630,4.04 - 4.29,4.00 - 4.27,8.0,51.0,Most Selective
+2024,UCLA,UCLA,Business,College Of Letters & Science,13634,1110,555,4.20 - 4.30,4.16 - 4.30,8.0,50.0,Most Selective
+2024,UCLA,UCLA,Computer Science,School Of Engineering & Applied Sci,10530,435,143,4.25 - 4.30,4.25 - 4.32,4.0,33.0,Most Selective
+2024,UCLA,UCLA,Education,College Of Letters & Science; School Of Music,1265,79,53,4.07 - 4.28,4.04 - 4.27,6.0,67.0,Most Selective
+2024,UCLA,UCLA,Engineering,College Of Letters & Science; School Of Engineering & Applied Sci,22301,1329,587,4.25 - 4.32,4.25 - 4.32,6.0,44.0,Most Selective
+2024,UCLA,UCLA,Life Sciences,College Of Letters & Science,23472,3092,1691,4.21 - 4.30,4.21 - 4.31,13.0,55.0,Highly Selective
+2024,UCLA,UCLA,Nursing,School Of Nursing,5790,55,40,4.25 - 4.30,4.23 - 4.31,1.0,73.0,Most Selective
+2024,UCLA,UCLA,Other Health Science,College Of Letters & Science,2470,285,140,4.20 - 4.30,4.20 - 4.30,12.0,49.0,Highly Selective
+2024,UCLA,UCLA,Other/Interdisciplinary,College Of Letters & Science,4591,597,294,4.21 - 4.30,4.21 - 4.31,13.0,49.0,Highly Selective
+2024,UCLA,UCLA,Physical Sciences/Math,College Of Letters & Science,12316,1844,823,4.22 - 4.32,4.21 - 4.32,15.0,45.0,Highly Selective
+2024,UCLA,UCLA,Public Admin,College Of Letters & Science,826,117,52,4.20 - 4.30,4.21 - 4.29,14.0,44.0,Highly Selective
+2024,UCLA,UCLA,Social Sciences,College Of Letters & Science,23884,2234,1166,4.17 - 4.30,4.14 - 4.30,9.0,52.0,Most Selective
+2024,UCLA,UCLA,Undeclared,College Of Letters & Science; School Of Engineering & Applied Sci,10059,693,436,4.17 - 4.31,4.16 - 4.30,7.0,63.0,Most Selective
+2024,UCM,UC Merced,Arts & Humanities,Not applicable,1451,1241,54,3.31 - 3.95,3.16 - 3.84,86.0,4.0,Broad Access
+2024,UCM,UC Merced,Business,Not applicable,3140,2788,140,3.34 - 3.95,3.20 - 3.83,89.0,5.0,Broad Access
+2024,UCM,UC Merced,Engineering,Not applicable,6429,5990,563,3.55 - 4.14,3.31 - 3.87,93.0,9.0,Broad Access
+2024,UCM,UC Merced,Life Sciences,Not applicable,4030,3769,284,3.52 - 4.12,3.33 - 3.94,94.0,8.0,Broad Access
+2024,UCM,UC Merced,Other/Interdisciplinary,Not applicable,980,932,41,3.58 - 4.12,3.17 - 3.95,95.0,4.0,Broad Access
+2024,UCM,UC Merced,Physical Sciences/Math,Not applicable,3346,3013,208,3.50 - 4.11,3.27 - 3.84,90.0,7.0,Broad Access
+2024,UCM,UC Merced,Public Health,Not applicable,1856,1654,91,3.34 - 4.00,3.31 - 3.94,89.0,6.0,Broad Access
+2024,UCM,UC Merced,Social Sciences,Not applicable,5509,4836,245,3.35 - 3.96,3.18 - 3.78,88.0,5.0,Broad Access
+2024,UCM,UC Merced,Undeclared,Not applicable,5187,4683,467,3.35 - 3.95,3.26 - 3.83,90.0,10.0,Broad Access
+2024,UCR,UC Riverside,Arts & Humanities,College Of Humanities & Social Sci,5353,4215,369,3.54 - 4.04,3.45 - 3.88,79.0,9.0,Broad Access
+2024,UCR,UC Riverside,Business,College Of Humanities & Social Sci; School Of Business Administration,4824,3699,762,3.72 - 4.10,3.54 - 3.93,77.0,21.0,Broad Access
+2024,UCR,UC Riverside,Computer Science,College Of Engineering; College Of Natural & Agricultural Sci,5001,2684,214,4.03 - 4.27,3.95 - 4.22,54.0,8.0,Moderately Accessible
+2024,UCR,UC Riverside,Education,School Of Education,1232,934,113,3.49 - 4.00,3.43 - 3.84,76.0,12.0,Broad Access
+2024,UCR,UC Riverside,Engineering,College Of Engineering,8486,5979,662,3.86 - 4.21,3.73 - 4.07,70.0,11.0,Moderately Accessible
+2024,UCR,UC Riverside,Life Sciences,College Of Humanities & Social Sci; College Of Natural & Agricultural Sci,11790,9697,1475,3.78 - 4.19,3.64 - 4.00,82.0,15.0,Broad Access
+2024,UCR,UC Riverside,Other/Interdisciplinary,College Of Humanities & Social Sci,172,149,5,3.61 - 4.07,3.54 - 4.00,87.0,3.0,Broad Access
+2024,UCR,UC Riverside,Physical Sciences/Math,College Of Natural & Agricultural Sci,2782,2390,224,3.70 - 4.16,3.60 - 4.03,86.0,9.0,Broad Access
+2024,UCR,UC Riverside,Public Admin,College Of Humanities & Social Sci; School Of Public Policy,703,609,73,3.44 - 4.08,3.29 - 3.70,87.0,12.0,Broad Access
+2024,UCR,UC Riverside,Social Sciences,College Of Humanities & Social Sci,13615,10681,1192,3.58 - 4.07,3.48 - 3.90,78.0,11.0,Broad Access
+2024,UCR,UC Riverside,Undeclared,College Of Humanities & Social Sci; College Of Natural & Agricultural Sci; School Of Business Administration,4089,3305,333,3.48 - 4.00,3.40 - 3.80,81.0,10.0,Broad Access
+2024,UCSB,UC Santa Barbara,Arts & Humanities,College Of Creative Studies; College Of Letters & Science,11707,3292,315,4.09 - 4.28,4.00 - 4.26,28.0,10.0,Selective
+2024,UCSB,UC Santa Barbara,Business,College Of Letters & Science,435,140,37,4.12 - 4.29,4.06 - 4.29,32.0,26.0,Selective
+2024,UCSB,UC Santa Barbara,Computer Science,College Of Creative Studies; College Of Engineering,8560,1470,174,4.25 - 4.31,4.23 - 4.32,17.0,12.0,Highly Selective
+2024,UCSB,UC Santa Barbara,Engineering,College Of Engineering,11873,2445,337,4.20 - 4.30,4.16 - 4.30,21.0,14.0,Highly Selective
+2024,UCSB,UC Santa Barbara,Life Sciences,College Of Creative Studies; College Of Letters & Science,20941,8398,1099,4.13 - 4.29,4.05 - 4.27,40.0,13.0,Selective
+2024,UCSB,UC Santa Barbara,Other/Interdisciplinary,College Of Creative Studies; College Of Letters & Science,5201,1433,267,4.10 - 4.28,4.06 - 4.27,28.0,19.0,Selective
+2024,UCSB,UC Santa Barbara,Physical Sciences/Math,College Of Creative Studies; College Of Letters & Science,12489,5914,767,4.14 - 4.29,4.08 - 4.27,47.0,13.0,Selective
+2024,UCSB,UC Santa Barbara,Social Sciences,College Of Letters & Science,31285,10456,1646,4.11 - 4.28,4.07 - 4.26,33.0,16.0,Selective
+2024,UCSB,UC Santa Barbara,Undeclared,College Of Letters & Science,7768,2799,366,4.10 - 4.28,4.04 - 4.27,36.0,13.0,Selective
+2024,UCSC,UC Santa Cruz,Arts & Humanities,Not applicable,6946,4185,348,3.82 - 4.18,3.75 - 4.08,60.0,8.0,Moderately Accessible
+2024,UCSC,UC Santa Cruz,Business,Not applicable,6749,4067,252,3.80 - 4.16,3.75 - 4.03,60.0,6.0,Moderately Accessible
+2024,UCSC,UC Santa Cruz,Computer Science,Not applicable,6597,4278,593,4.00 - 4.26,3.88 - 4.20,65.0,14.0,Moderately Accessible
+2024,UCSC,UC Santa Cruz,Education,Not applicable,405,287,18,3.87 - 4.25,3.64 - 4.07,71.0,6.0,Moderately Accessible
+2024,UCSC,UC Santa Cruz,Engineering,Not applicable,5018,3450,448,3.90 - 4.23,3.78 - 4.09,69.0,13.0,Moderately Accessible
+2024,UCSC,UC Santa Cruz,Life Sciences,Not applicable,13774,9836,935,3.88 - 4.23,3.76 - 4.07,71.0,10.0,Moderately Accessible
+2024,UCSC,UC Santa Cruz,Other Health Science,Not applicable,59,59,47,3.72 - 4.07,3.73 - 4.05,100.0,80.0,Broad Access
+2024,UCSC,UC Santa Cruz,Other/Interdisciplinary,Not applicable,1925,1350,161,3.87 - 4.21,3.75 - 4.08,70.0,12.0,Moderately Accessible
+2024,UCSC,UC Santa Cruz,Physical Sciences/Math,Not applicable,3313,2481,210,3.92 - 4.25,3.80 - 4.13,75.0,8.0,Broad Access
+2024,UCSC,UC Santa Cruz,Public Admin,Not applicable,215,114,10,3.72 - 4.16,3.70 - 4.09,53.0,9.0,Moderately Accessible
+2024,UCSC,UC Santa Cruz,Social Sciences,Not applicable,11938,7493,708,3.80 - 4.17,3.75 - 4.07,63.0,9.0,Moderately Accessible
+2024,UCSC,UC Santa Cruz,Undeclared,Not applicable,11117,7275,583,3.83 - 4.20,3.75 - 4.10,65.0,8.0,Moderately Accessible
+2024,UCSC,UC Santa Cruz,Unknown,Not applicable,3666,2311,70,3.92 - 4.24,3.94 - 4.18,63.0,3.0,Moderately Accessible
+2024,UCSD,UC San Diego,Architecture,Not applicable,722,189,47,4.00 - 4.24,4.00 - 4.20,26.0,25.0,Selective
+2024,UCSD,UC San Diego,Arts & Humanities,Not applicable,7501,2372,415,4.08 - 4.27,4.04 - 4.25,32.0,17.0,Selective
+2024,UCSD,UC San Diego,Business,Not applicable,8727,1600,297,4.08 - 4.28,3.97 - 4.25,18.0,19.0,Highly Selective
+2024,UCSD,UC San Diego,Computer Science,Not applicable,12519,1666,479,4.16 - 4.30,4.12 - 4.30,13.0,29.0,Highly Selective
+2024,UCSD,UC San Diego,Education,Not applicable,997,293,55,4.06 - 4.26,4.00 - 4.20,29.0,19.0,Selective
+2024,UCSD,UC San Diego,Engineering,Not applicable,18443,3102,797,4.16 - 4.30,4.12 - 4.29,17.0,26.0,Highly Selective
+2024,UCSD,UC San Diego,Life Sciences,Not applicable,23363,8360,1751,4.12 - 4.29,4.04 - 4.27,36.0,21.0,Selective
+2024,UCSD,UC San Diego,Other Health Science,Not applicable,2593,807,155,4.11 - 4.28,4.03 - 4.26,31.0,19.0,Selective
+2024,UCSD,UC San Diego,Other/Interdisciplinary,Not applicable,10495,3162,654,4.09 - 4.28,4.00 - 4.25,30.0,21.0,Selective
+2024,UCSD,UC San Diego,Physical Sciences/Math,Not applicable,11750,4202,779,4.13 - 4.29,4.07 - 4.27,36.0,19.0,Selective
+2024,UCSD,UC San Diego,Public Health,Not applicable,1343,258,41,4.08 - 4.28,4.04 - 4.25,19.0,16.0,Highly Selective
+2024,UCSD,UC San Diego,Social Sciences,Not applicable,25213,6069,1205,4.06 - 4.27,4.00 - 4.23,24.0,20.0,Highly Selective
+2024,UCSD,UC San Diego,Undeclared,Not applicable,10783,3836,656,4.06 - 4.28,4.00 - 4.24,36.0,17.0,Selective
