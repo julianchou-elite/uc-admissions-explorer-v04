@@ -1,0 +1,301 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Elite Prep UC Admissions Explorer | Freshman Admission by Discipline, 2023–2025</title>
+<meta name="description" content="Interactive explorer for University of California freshman admission rates by campus and broad discipline using UC Information Center data from 2023 through 2025." />
+<style>
+:root { --navy:#10233f; --blue:#1f5fbf; --light:#f4f7fb; --line:#d8e0ec; --text:#1e2a36; --muted:#687586; --green:#2d8a5b; --yellow:#b98200; --red:#bc3d3d; --card:#ffffff; --purple:#6a4c93; }
+* { box-sizing:border-box; }
+body { margin:0; font-family:Inter,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif; color:var(--text); background:#eef3f8; }
+.hero { background:linear-gradient(135deg,#10233f,#1f5fbf); color:white; padding:42px 24px 34px; }
+.brandbar { display:flex; align-items:center; gap:14px; margin-bottom:24px; }
+.brand-logo { width:58px; height:58px; border-radius:50%; background:white; padding:7px; object-fit:contain; box-shadow:0 8px 18px rgba(0,0,0,.16); }
+.brand-text { display:flex; flex-direction:column; line-height:1.05; }
+.brand-name { font-size:18px; font-weight:800; letter-spacing:.01em; }
+.brand-tool { font-size:13px; opacity:.86; margin-top:5px; letter-spacing:.08em; text-transform:uppercase; }
+.wrap { max-width:1180px; margin:0 auto; }
+h1 { margin:0 0 10px; font-size:clamp(30px,4vw,52px); line-height:1.02; letter-spacing:-0.04em; }
+.subtitle { max-width:880px; font-size:17px; line-height:1.55; opacity:.93; margin:0; }
+.badges { display:flex; flex-wrap:wrap; gap:10px; margin-top:20px; }
+.badge { border:1px solid rgba(255,255,255,.35); border-radius:999px; padding:7px 11px; font-size:13px; background:rgba(255,255,255,.12); }
+main { padding:24px; }
+.panel { background:var(--card); border:1px solid var(--line); border-radius:20px; padding:18px; box-shadow:0 8px 24px rgba(16,35,63,.07); margin-bottom:18px; }
+.controls { display:grid; grid-template-columns:1.2fr 1.2fr 1fr 1fr; gap:12px; align-items:end; }
+.controls2 { display:grid; grid-template-columns:1fr 1fr 1fr 1fr; gap:12px; align-items:end; margin-top:12px; }
+label { display:block; font-size:12px; font-weight:700; text-transform:uppercase; letter-spacing:.05em; color:var(--muted); margin-bottom:6px; }
+input, select { width:100%; border:1px solid var(--line); border-radius:12px; padding:11px 12px; font-size:15px; background:white; color:var(--text); }
+input[type=range] { padding:0; }
+.actions { display:flex; flex-wrap:wrap; gap:10px; margin-top:12px; }
+button { border:0; border-radius:12px; padding:10px 12px; font-weight:700; cursor:pointer; background:var(--navy); color:white; }
+button.secondary { background:#e8eef7; color:var(--navy); }
+button.ghost { background:white; color:var(--navy); border:1px solid var(--line); }
+button:hover { filter:brightness(.95); }
+.kpis { display:grid; grid-template-columns:repeat(6,1fr); gap:12px; }
+.kpi { background:var(--light); border:1px solid var(--line); border-radius:16px; padding:14px; }
+.kpi .num { font-size:25px; font-weight:800; color:var(--navy); }
+.kpi .label { color:var(--muted); font-size:13px; margin-top:4px; }
+.section-title { display:flex; justify-content:space-between; gap:12px; align-items:flex-end; margin-bottom:12px; }
+h2 { margin:0; font-size:22px; color:var(--navy); }
+.hint { color:var(--muted); font-size:13px; }
+.table-wrap { overflow:auto; border:1px solid var(--line); border-radius:16px; }
+table { border-collapse:separate; border-spacing:0; width:100%; min-width:1030px; background:white; }
+th,td { padding:11px 12px; border-bottom:1px solid var(--line); text-align:left; font-size:14px; }
+th { position:sticky; top:0; background:#f8fafc; color:#34435a; cursor:pointer; user-select:none; font-size:12px; text-transform:uppercase; letter-spacing:.04em; z-index:1; }
+tr:hover td { background:#fbfdff; }
+td.num { text-align:right; font-variant-numeric:tabular-nums; }
+.pill { border-radius:999px; padding:5px 8px; font-size:12px; font-weight:800; white-space:nowrap; }
+.sel-Most-Selective { background:#fdecec; color:#9d2424; }
+.sel-Highly-Selective { background:#fff2cc; color:#7a5400; }
+.sel-Selective { background:#e8f2ff; color:#1f5fbf; }
+.sel-Moderately-Accessible { background:#e9f7ee; color:#217447; }
+.sel-Broad-Access { background:#edf8f2; color:#146c43; }
+.barbox { height:9px; background:#edf1f6; border-radius:999px; overflow:hidden; min-width:90px; }
+.bar { height:100%; border-radius:999px; background:linear-gradient(90deg,#bc3d3d,#b98200,#2d8a5b); }
+.grid2 { display:grid; grid-template-columns:1fr 1fr; gap:18px; }
+.cards { display:grid; gap:10px; }
+.cardrow { display:grid; grid-template-columns:1fr auto; gap:10px; padding:11px; border:1px solid var(--line); border-radius:14px; background:#fbfdff; }
+.cardrow b { color:var(--navy); }
+.mini { color:var(--muted); font-size:13px; margin-top:2px; }
+.heatmap { display:grid; gap:7px; }
+.heatrow { display:grid; grid-template-columns:145px 1fr; gap:8px; align-items:center; }
+.heatcells { display:grid; grid-template-columns:repeat(18,minmax(46px,1fr)); gap:4px; overflow:auto; }
+.heatcell { padding:8px 5px; border-radius:9px; text-align:center; font-size:12px; font-weight:800; color:white; min-width:46px; line-height:1.1; }
+.heatcell small { display:block; font-size:9px; opacity:.85; font-weight:700; margin-top:2px; }
+.heatlabel { font-size:13px; color:var(--navy); font-weight:800; }
+.legend { display:flex; flex-wrap:wrap; gap:10px; color:var(--muted); font-size:12px; margin-top:10px; }
+.dot { width:10px; height:10px; display:inline-block; border-radius:50%; margin-right:5px; }
+.note { color:var(--muted); line-height:1.5; font-size:13px; }
+.status { font-size:13px; color:var(--muted); margin-top:8px; }
+footer { padding:22px 24px 34px; color:var(--muted); font-size:13px; }
+@media (max-width:900px) { .controls,.controls2,.kpis,.grid2 { grid-template-columns:1fr; } main,.hero { padding-left:16px; padding-right:16px; } .brand-logo { width:50px; height:50px; } .heatrow { grid-template-columns:1fr; } .heatcells { grid-template-columns:repeat(10,minmax(48px,1fr)); } }
+</style>
+</head>
+<body>
+<header class="hero"><div class="wrap">
+<div class="brandbar"><img class="brand-logo" src="assets/elite-seal.png" alt="Elite Prep seal"><div class="brand-text"><div class="brand-name">Elite Prep</div><div class="brand-tool">UC Admissions Explorer</div></div></div>
+<h1>UC Admissions Explorer</h1>
+<p class="subtitle">Compare admission rates by intended field of study across all nine University of California campuses. Admission competitiveness can vary dramatically by discipline, even within the same campus.</p>
+<div class="badges"><span class="badge">2023–2025 data</span><span class="badge">9 UC campuses</span><span class="badge">Applicants • Admits • Enrollees • GPA • Yield</span><span class="badge">Source: UC Information Center</span></div>
+</div></header>
+<main><div class="wrap">
+<section class="panel">
+<div class="controls">
+<div><label for="year">Year</label><select id="year"><option value="2025">2025</option><option value="2024">2024</option><option value="2023">2023</option></select></div>
+<div><label for="search">Search campus, discipline, or college/school</label><input id="search" placeholder="Try: engineering, UCLA, nursing, business" /></div>
+<div><label for="campus">Campus</label><select id="campus"><option value="">All campuses</option></select></div>
+<div><label for="discipline">Discipline</label><select id="discipline"><option value="">All disciplines</option></select></div>
+</div>
+<div class="controls2">
+<div><label for="selectivity">Selectivity</label><select id="selectivity"><option value="">All levels</option><option>Most Selective</option><option>Highly Selective</option><option>Selective</option><option>Moderately Accessible</option><option>Broad Access</option></select></div>
+<div><label for="rateMax">Maximum admit rate: <span id="rateLabel">100%</span></label><input id="rateMax" type="range" min="1" max="100" value="100" /></div>
+<div><label for="minApps">Minimum applicants</label><input id="minApps" type="number" min="0" step="100" value="0" /></div>
+<div><label for="sort">Sort by</label><select id="sort"><option value="admit_rate_asc">Admit rate ↑ most selective</option><option value="admit_rate_desc">Admit rate ↓ most accessible</option><option value="applicants_desc">Applicants ↓</option><option value="yield_rate_desc">Yield ↓</option><option value="campus_asc">Campus A–Z</option><option value="discipline_asc">Discipline A–Z</option></select></div>
+</div>
+<div class="actions"><button id="reset">Reset filters</button><button id="printPdf" class="secondary">Print / Save filtered results as PDF</button></div>
+<div id="status" class="status">Loading data…</div>
+</section>
+<section class="panel"><div class="kpis"><div class="kpi"><div class="num" id="kpiRows">—</div><div class="label">Filtered rows</div></div><div class="kpi"><div class="num" id="kpiApps">—</div><div class="label">Applicants</div></div><div class="kpi"><div class="num" id="kpiAdmits">—</div><div class="label">Admits</div></div><div class="kpi"><div class="num" id="kpiAdmitRate">—</div><div class="label">Weighted admit rate</div></div><div class="kpi"><div class="num" id="kpiLowest">—</div><div class="label">Lowest admit rate</div></div><div class="kpi"><div class="num" id="kpiYield">—</div><div class="label">Weighted yield</div></div></div></section>
+<section class="panel"><div class="section-title"><h2>Admit-rate heat map</h2><span class="hint">Darker red = lower admit rate; green = higher admit rate</span></div><div id="heatmap" class="heatmap"></div><div class="legend"><span><i class="dot" style="background:#bc3d3d"></i>Under 10%</span><span><i class="dot" style="background:#b98200"></i>10–24%</span><span><i class="dot" style="background:#1f5fbf"></i>25–49%</span><span><i class="dot" style="background:#2d8a5b"></i>50%+</span></div></section>
+<section class="grid2">
+<aside class="panel"><div class="section-title"><h2>Most selective now</h2><span class="hint">Based on current filters</span></div><div id="topList" class="cards"></div></aside>
+<aside class="panel"><div class="section-title"><h2>Biggest applicant pools</h2><span class="hint">Based on current filters</span></div><div id="demandList" class="cards"></div></aside>
+</section>
+<section class="panel"><div class="section-title"><h2>Explore the table</h2><span class="hint">Click column headers to sort</span></div><div class="table-wrap"><table id="dataTable"><thead><tr><th data-key="campus_display">Campus</th><th data-key="discipline">Discipline</th><th data-key="college_school_labels">College / School</th><th data-key="applicants">Applicants</th><th data-key="admits">Admits</th><th data-key="enrollees">Enrollees</th><th data-key="admit_rate">Admit Rate</th><th data-key="yield_rate">Yield</th><th data-key="admit_gpa">Admit GPA</th><th data-key="selectivity_label">Selectivity</th></tr></thead><tbody></tbody></table></div></section>
+<section class="panel note"><b>How to use this:</b> Compare the specific campus-and-discipline combination, not just the campuswide admit rate. A broad discipline is not always the same as an individual major, and UC campuses may have additional rules for selective or capped majors. GPA ranges are UC-calculated admitted/enrolled student ranges from the source data. Row availability may differ by year depending on what UC reported.</section>
+</div></main>
+<footer><div class="wrap">Data source: University of California Information Center, Freshman admission by discipline, 2023–2025. This independent visualization is for informational college planning only.</div></footer>
+<script>
+const YEARS = ['2025','2024','2023'];
+const campusOrder = ['UC Berkeley','UCLA','UC San Diego','UC Irvine','UC Santa Barbara','UC Davis','UC Santa Cruz','UC Riverside','UC Merced'];
+let DATA_BY_YEAR = {};
+let DATA = [];
+let filtered = [];
+let sortState = {key:'admit_rate', dir:'asc'};
+const $ = id => document.getElementById(id);
+function fmt(n) { return Number(n||0).toLocaleString(); }
+function pct(n) { return (n==null || Number.isNaN(Number(n))) ? '—' : Math.round(Number(n))+'%'; }
+function colorFor(rate) { rate=Number(rate); if(rate<10) return '#bc3d3d'; if(rate<25) return '#b98200'; if(rate<50) return '#1f5fbf'; return '#2d8a5b'; }
+function slug(s) { return String(s).replace(/[^A-Za-z0-9]/g,'-'); }
+function parseCSV(text) {
+  const rows=[]; let row=[]; let val=''; let inQ=false;
+  for(let i=0;i<text.length;i++){
+    const ch=text[i], next=text[i+1];
+    if(inQ){ if(ch==='"' && next==='"'){ val+='"'; i++; } else if(ch==='"'){ inQ=false; } else { val+=ch; } }
+    else { if(ch==='"') inQ=true; else if(ch===','){ row.push(val); val=''; } else if(ch==='\n'){ row.push(val); rows.push(row); row=[]; val=''; } else if(ch!=='\r'){ val+=ch; } }
+  }
+  if(val!=='' || row.length){ row.push(val); rows.push(row); }
+  const header=rows.shift();
+  return rows.filter(r=>r.length && r.some(x=>x!=='')).map(r=>Object.fromEntries(header.map((h,i)=>[h,r[i]??'']))).map(d=>({
+    ...d,
+    year: Number(d.year), applicants: Number(d.applicants||0), admits: Number(d.admits||0), enrollees: Number(d.enrollees||0), admit_rate: Number(d.admit_rate||0), yield_rate: Number(d.yield_rate||0)
+  }));
+}
+async function loadYear(year) {
+  if(DATA_BY_YEAR[year]) return DATA_BY_YEAR[year];
+  const res = await fetch(`data/uc${year}.csv`, {cache:'no-cache'});
+  if(!res.ok) throw new Error(`Could not load data/uc${year}.csv`);
+  const text = await res.text();
+  DATA_BY_YEAR[year] = parseCSV(text);
+  return DATA_BY_YEAR[year];
+}
+async function setYear(year) {
+  $('status').textContent = `Loading ${year} data…`;
+  try {
+    DATA = await loadYear(year);
+    initSelects();
+    applyFilters();
+    $('status').textContent = `${fmt(DATA.length)} campus-discipline rows loaded for ${year}.`;
+  } catch (err) {
+    console.error(err);
+    $('status').textContent = `Data could not be loaded. Confirm that data/uc${year}.csv is uploaded with index.html.`;
+  }
+}
+function initSelects() {
+  const currentCampus=$('campus').value, currentDisc=$('discipline').value;
+  const campuses = [...new Set(DATA.map(d=>d.campus_display))].sort((a,b)=>campusOrder.indexOf(a)-campusOrder.indexOf(b));
+  $('campus').innerHTML = '<option value="">All campuses</option>' + campuses.map(c=>`<option>${c}</option>`).join('');
+  if(campuses.includes(currentCampus)) $('campus').value=currentCampus;
+  const discs = [...new Set(DATA.map(d=>d.discipline))].sort();
+  $('discipline').innerHTML = '<option value="">All disciplines</option>' + discs.map(d=>`<option>${d}</option>`).join('');
+  if(discs.includes(currentDisc)) $('discipline').value=currentDisc;
+}
+function getFiltered() {
+  const q = $('search').value.trim().toLowerCase();
+  const campus = $('campus').value;
+  const disc = $('discipline').value;
+  const sel = $('selectivity').value;
+  const maxRate = Number($('rateMax').value);
+  const minApps = Number($('minApps').value || 0);
+  return DATA.filter(d => {
+    const hay = [d.campus_display,d.discipline,d.college_school_labels,d.selectivity_label].join(' ').toLowerCase();
+    return (!q || hay.includes(q)) && (!campus || d.campus_display===campus) && (!disc || d.discipline===disc) && (!sel || d.selectivity_label===sel) && Number(d.admit_rate)<=maxRate && Number(d.applicants)>=minApps;
+  });
+}
+function sortData(rows) {
+  const [key,dir] = $('sort').value.split(/_(?=[^_]+$)/);
+  sortState={key,dir};
+  return [...rows].sort((a,b)=>{
+    let av=a[key], bv=b[key];
+    if(key==='campus') { av=a.campus_display; bv=b.campus_display; }
+    const numKeys=['admit_rate','yield_rate','applicants','admits','enrollees'];
+    let comp;
+    if(numKeys.includes(key)) comp = Number(av||0) - Number(bv||0);
+    else comp = String(av||'').localeCompare(String(bv||''));
+    return dir==='desc' ? -comp : comp;
+  });
+}
+function applyFilters() {
+  $('rateLabel').textContent = $('rateMax').value + '%';
+  filtered = sortData(getFiltered());
+  renderKPIs(filtered); renderHeatmap(filtered); renderLists(filtered); renderTable(filtered);
+}
+function renderKPIs(rows) {
+  const apps = rows.reduce((s,d)=>s+d.applicants,0);
+  const admits = rows.reduce((s,d)=>s+d.admits,0);
+  const enrollees = rows.reduce((s,d)=>s+d.enrollees,0);
+  const lowest = rows.length ? Math.min(...rows.map(d=>d.admit_rate)) : null;
+  $('kpiRows').textContent = fmt(rows.length);
+  $('kpiApps').textContent = fmt(apps);
+  $('kpiAdmits').textContent = fmt(admits);
+  $('kpiAdmitRate').textContent = apps ? pct(admits/apps*100) : '—';
+  $('kpiLowest').textContent = lowest==null ? '—' : pct(lowest);
+  $('kpiYield').textContent = admits ? pct(enrollees/admits*100) : '—';
+}
+function renderTable(rows) {
+  const body = document.querySelector('#dataTable tbody');
+  body.innerHTML = rows.map(d=>`<tr>
+    <td><b>${d.campus_display}</b></td><td>${d.discipline}</td><td>${d.college_school_labels}</td>
+    <td class="num">${fmt(d.applicants)}</td><td class="num">${fmt(d.admits)}</td><td class="num">${fmt(d.enrollees)}</td>
+    <td class="num"><div style="display:flex;align-items:center;gap:8px;justify-content:flex-end"><span>${pct(d.admit_rate)}</span><span class="barbox"><span class="bar" style="width:${Math.min(100,d.admit_rate)}%"></span></span></div></td>
+    <td class="num">${pct(d.yield_rate)}</td><td>${d.admit_gpa || '—'}</td><td><span class="pill sel-${slug(d.selectivity_label)}">${d.selectivity_label}</span></td>
+  </tr>`).join('');
+}
+function renderLists(rows) {
+  const top = [...rows].sort((a,b)=>a.admit_rate-b.admit_rate || b.applicants-a.applicants).slice(0,8);
+  $('topList').innerHTML = top.length ? top.map(d=>`<div class="cardrow"><div><b>${d.campus_display} · ${d.discipline}</b><div class="mini">${fmt(d.applicants)} applicants · ${fmt(d.admits)} admits</div></div><div><span class="pill sel-${slug(d.selectivity_label)}">${pct(d.admit_rate)}</span></div></div>`).join('') : '<div class="note">No rows match the current filters.</div>';
+  const demand = [...rows].sort((a,b)=>b.applicants-a.applicants).slice(0,8);
+  $('demandList').innerHTML = demand.length ? demand.map(d=>`<div class="cardrow"><div><b>${d.campus_display} · ${d.discipline}</b><div class="mini">${pct(d.admit_rate)} admit rate · ${fmt(d.admits)} admits</div></div><div><b>${fmt(d.applicants)}</b></div></div>`).join('') : '<div class="note">No rows match the current filters.</div>';
+}
+function renderHeatmap(rows) {
+  const container = $('heatmap');
+  const disciplines = [...new Set(rows.map(d=>d.discipline))].sort();
+  const campuses = [...new Set(rows.map(d=>d.campus_display))].sort((a,b)=>campusOrder.indexOf(a)-campusOrder.indexOf(b));
+  const byKey = new Map(rows.map(d=>[d.campus_display+'|'+d.discipline,d]));
+  if(!rows.length) { container.innerHTML='<div class="note">No rows match the current filters.</div>'; return; }
+  container.innerHTML = disciplines.map(disc=>`<div class="heatrow"><div class="heatlabel">${disc}</div><div class="heatcells">${campuses.map(c=>{
+    const d = byKey.get(c+'|'+disc);
+    if(!d) return `<div class="heatcell" style="background:#d8e0ec;color:#687586">—<small>${shortCampus(c)}</small></div>`;
+    return `<div class="heatcell" title="${c} · ${disc}: ${pct(d.admit_rate)}" style="background:${colorFor(d.admit_rate)}">${pct(d.admit_rate)}<small>${shortCampus(c)}</small></div>`;
+  }).join('')}</div></div>`).join('');
+}
+function shortCampus(c) { return {'UC Berkeley':'UCB','UCLA':'UCLA','UC San Diego':'UCSD','UC Irvine':'UCI','UC Santa Barbara':'UCSB','UC Davis':'UCD','UC Santa Cruz':'UCSC','UC Riverside':'UCR','UC Merced':'UCM'}[c] || c; }
+function esc(s) {
+  return String(s ?? '').replace(/[&<>"]/g, ch => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[ch]));
+}
+function currentFilterSummary() {
+  const parts = [];
+  parts.push(`Year: ${$('year').value}`);
+  if($('search').value.trim()) parts.push(`Search: ${$('search').value.trim()}`);
+  if($('campus').value) parts.push(`Campus: ${$('campus').value}`);
+  if($('discipline').value) parts.push(`Discipline: ${$('discipline').value}`);
+  if($('selectivity').value) parts.push(`Selectivity: ${$('selectivity').value}`);
+  if(Number($('rateMax').value) < 100) parts.push(`Maximum admit rate: ${$('rateMax').value}%`);
+  if(Number($('minApps').value || 0) > 0) parts.push(`Minimum applicants: ${fmt($('minApps').value)}`);
+  return parts.join(' · ');
+}
+function openPrintView() {
+  const rows = filtered;
+  const year = $('year').value;
+  const printedAt = new Date().toLocaleDateString(undefined, {year:'numeric', month:'long', day:'numeric'});
+  const apps = rows.reduce((s,d)=>s+d.applicants,0);
+  const admits = rows.reduce((s,d)=>s+d.admits,0);
+  const enrollees = rows.reduce((s,d)=>s+d.enrollees,0);
+  const weightedAdmit = apps ? pct(admits/apps*100) : '—';
+  const weightedYield = admits ? pct(enrollees/admits*100) : '—';
+  const tableRows = rows.map(d=>`<tr>
+    <td>${esc(d.campus_display)}</td><td>${esc(d.discipline)}</td><td>${esc(d.college_school_labels)}</td>
+    <td class="num">${fmt(d.applicants)}</td><td class="num">${fmt(d.admits)}</td><td class="num">${fmt(d.enrollees)}</td>
+    <td class="num">${pct(d.admit_rate)}</td><td class="num">${pct(d.yield_rate)}</td><td>${esc(d.admit_gpa || '—')}</td><td>${esc(d.selectivity_label)}</td>
+  </tr>`).join('');
+  const html = `<!doctype html><html><head><meta charset="utf-8"><title>UC Admissions Explorer Filtered Results ${year}</title>
+  <style>
+    body{font-family:Arial,Helvetica,sans-serif;color:#1e2a36;margin:28px;background:white;}
+    .header{display:flex;align-items:center;gap:12px;border-bottom:3px solid #10233f;padding-bottom:12px;margin-bottom:16px;}
+    .logo{width:52px;height:52px;border-radius:50%;object-fit:contain;border:1px solid #d8e0ec;}
+    h1{font-size:24px;margin:0;color:#10233f;} .brand{font-weight:700;color:#10233f;font-size:13px;letter-spacing:.06em;text-transform:uppercase;}
+    .meta{font-size:12px;color:#687586;line-height:1.45;margin:8px 0 14px;}
+    .summary{display:grid;grid-template-columns:repeat(5,1fr);gap:8px;margin:14px 0;}
+    .box{border:1px solid #d8e0ec;border-radius:8px;padding:8px;background:#f8fafc;}.numBig{font-size:18px;font-weight:800;color:#10233f}.label{font-size:11px;color:#687586;margin-top:2px;}
+    table{border-collapse:collapse;width:100%;font-size:11px;} th,td{border:1px solid #d8e0ec;padding:6px;vertical-align:top;} th{background:#10233f;color:white;text-align:left;} td.num{text-align:right;white-space:nowrap;}
+    .note{font-size:11px;color:#687586;margin-top:14px;line-height:1.45;}
+    @media print{body{margin:12mm}.no-print{display:none} table{font-size:9.5px} h1{font-size:20px}.summary{grid-template-columns:repeat(5,1fr)} @page{size:landscape;margin:10mm}}
+  </style></head><body>
+  <div class="header"><img class="logo" src="assets/elite-seal.png" alt="Elite Prep seal"><div><div class="brand">Elite Prep</div><h1>UC Admissions Explorer — Filtered Results</h1></div></div>
+  <div class="meta"><b>Filters:</b> ${esc(currentFilterSummary())}<br><b>Generated:</b> ${esc(printedAt)} · <b>Rows:</b> ${fmt(rows.length)}</div>
+  <div class="summary"><div class="box"><div class="numBig">${fmt(rows.length)}</div><div class="label">Filtered rows</div></div><div class="box"><div class="numBig">${fmt(apps)}</div><div class="label">Applicants</div></div><div class="box"><div class="numBig">${fmt(admits)}</div><div class="label">Admits</div></div><div class="box"><div class="numBig">${weightedAdmit}</div><div class="label">Weighted admit rate</div></div><div class="box"><div class="numBig">${weightedYield}</div><div class="label">Weighted yield</div></div></div>
+  <button class="no-print" onclick="window.print()" style="margin:8px 0 14px;padding:9px 12px;border:0;border-radius:8px;background:#10233f;color:white;font-weight:700;cursor:pointer;">Print / Save as PDF</button>
+  <table><thead><tr><th>Campus</th><th>Discipline</th><th>College / School</th><th>Applicants</th><th>Admits</th><th>Enrollees</th><th>Admit Rate</th><th>Yield</th><th>Admit GPA</th><th>Selectivity</th></tr></thead><tbody>${tableRows || '<tr><td colspan="10">No rows match the current filters.</td></tr>'}</tbody></table>
+  <div class="note">Data source: University of California Information Center, Freshman admission by discipline. This print view includes only the currently filtered results for the selected year; it does not provide all-years data. Use as an informational planning tool, not as a prediction of individual admission outcomes.</div>
+  <script>setTimeout(()=>window.print(),500);<\/script></body></html>`;
+  const w = window.open('', '_blank');
+  if(!w) { alert('Please allow pop-ups for this site to generate the print/PDF view.'); return; }
+  w.document.open(); w.document.write(html); w.document.close();
+}
+document.querySelectorAll('th[data-key]').forEach(th=>th.addEventListener('click',()=>{
+  const key=th.dataset.key;
+  const cur=$('sort').value;
+  if(['admit_rate','yield_rate','applicants'].includes(key)) $('sort').value = key + (cur.startsWith(key+'_asc') ? '_desc' : '_asc');
+  else if(key==='campus_display') $('sort').value='campus_asc';
+  else if(key==='discipline') $('sort').value='discipline_asc';
+  applyFilters();
+}));
+['search','campus','discipline','selectivity','rateMax','minApps','sort'].forEach(id=>$(id).addEventListener('input', applyFilters));
+$('year').addEventListener('change', e=>setYear(e.target.value));
+$('reset').addEventListener('click',()=>{ $('search').value=''; $('campus').value=''; $('discipline').value=''; $('selectivity').value=''; $('rateMax').value=100; $('minApps').value=0; $('sort').value='admit_rate_asc'; applyFilters(); });
+$('printPdf').addEventListener('click', openPrintView);
+setYear($('year').value);
+</script>
+</body>
+</html>
